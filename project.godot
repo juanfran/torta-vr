@@ -216,6 +216,10 @@ config/name="TortaVr"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg" )

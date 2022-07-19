@@ -43,3 +43,6 @@ func render():
 
             # platform.set_owner(get_scene())
             platform.set_owner(get_tree().edited_scene_root)
+
+func _on_Area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+    Global.reset_player_position()
