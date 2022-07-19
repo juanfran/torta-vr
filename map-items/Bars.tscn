@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/godot-xr-tools/objects/Object_climbable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://map-items/Bar.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.2, 2, 0.2 )
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.1, 0.1, 4.6 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 0.2, 0.2, 9.2 )
+
+[sub_resource type="ShaderMaterial" id=6]
+
+[node name="Bars" type="Spatial"]
+
+[node name="Init" type="Spatial" parent="."]
+
+[node name="Pilar" parent="Init" instance=ExtResource( 1 )]
+
+[node name="CollisionShape" parent="Init/Pilar" index="0"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Init/Pilar"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Pilar2" parent="Init" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+
+[node name="CollisionShape" parent="Init/Pilar2" index="0"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Init/Pilar2"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="End" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9 )
+
+[node name="Pilar" parent="End" instance=ExtResource( 1 )]
+
+[node name="CollisionShape" parent="End/Pilar" index="0"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="End/Pilar"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Pilar2" parent="End" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+
+[node name="CollisionShape" parent="End/Pilar2" index="0"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="End/Pilar2"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Top" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09535, 4.50026 )
+
+[node name="CollisionShape" parent="Top" index="0"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Top"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Top2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.503, 1.095, 4.5 )
+
+[node name="CollisionShape" parent="Top2" index="0"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Top2"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="HBars" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, -0.835362, 1.072, 8.49944 )
+
+[node name="Bar" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504601, -1.19209e-07, 0 )
+
+[node name="Bar2" parent="HBars" instance=ExtResource( 2 )]
+
+[node name="Bar3" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0 )
+
+[node name="Bar4" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="Bar5" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+
+[node name="Bar6" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+
+[node name="Bar7" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0 )
+
+[node name="Bar8" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0 )
+
+[node name="Bar9" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0 )
+
+[node name="Bar10" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+
+[node name="Bar11" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0 )
+
+[node name="Bar12" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
+
+[node name="Bar13" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0 )
+
+[node name="Bar14" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0 )
+
+[node name="Bar15" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0 )
+
+[node name="Bar16" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0 )
+
+[node name="Bar17" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0 )
+
+[node name="Bar18" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+
+[node name="Bar19" parent="HBars" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0 )
+
+[editable path="Init/Pilar"]
+[editable path="Init/Pilar2"]
+[editable path="End/Pilar"]
+[editable path="End/Pilar2"]
+[editable path="Top"]
+[editable path="Top2"]
