@@ -14,7 +14,7 @@
 [node name="Main" type="Spatial"]
 
 [node name="Player" type="Spatial" parent="."]
-transform = Transform( 0.0292824, 0, 0.999571, 0, 1, 0, -0.999571, 0, 0.0292824, -21.1802, 8.34997, 7.07651 )
+transform = Transform( 0.0292824, 0, 0.999571, 0, 1, 0, -0.999571, 0, 0.0292824, -35.528, 8.34997, 7.07651 )
 
 [node name="FPController" parent="Player" instance=ExtResource( 1 )]
 
