@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://map-items/Building.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/wahooney.itch.io/white_grid.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://GameOver.gd" type="Script" id=7]
 [ext_resource path="res://map-items/JumpPad.tscn" type="PackedScene" id=8]
 [ext_resource path="res://map-items/Mountain.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/godot-xr-tools/overrides/GroundPhysics.gd" type="Script" id=10]
+[ext_resource path="res://map-items/SkiSlopePhysics.tres" type="Resource" id=11]
 
 [sub_resource type="ProceduralSky" id=5]
 sky_top_color = Color( 0.211765, 0.313726, 0.552941, 1 )
@@ -45,6 +47,14 @@ albedo_texture = ExtResource( 2 )
 [sub_resource type="BoxShape" id=9]
 extents = Vector3( 2.5, 0.25, 7.5 )
 
+[sub_resource type="CubeMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=15]
+
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 2000, 1, 2000 )
 
@@ -54,7 +64,7 @@ extents = Vector3( 2000, 1, 2000 )
 environment = SubResource( 6 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( -0.838799, -0.23517, 0.49103, -0.0111158, 0.909108, 0.416412, -0.544327, 0.343828, -0.765173, -2.59672, 19.5656, -0.434363 )
+transform = Transform( -0.9186, -0.391065, -0.0569496, -0.339757, 0.707903, 0.619224, -0.201842, 0.588168, -0.783146, -48.1299, 71.659, -37.8822 )
 light_energy = 1.7
 
 [node name="Zone1" type="Spatial" parent="."]
@@ -218,6 +228,23 @@ transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 10, -49.2353, 11.3393, 12.2626 )
 
 [node name="Checkpoint2" parent="Zone3" instance=ExtResource( 6 )]
 transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 10, -47.2163, 22.3584, 12.4211 )
+
+[node name="Zone4" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="Zone4"]
+transform = Transform( 2.81677, 20.6554, 0, -4.13108, 14.0838, 0, 0, 0, 10, -71.4846, 3.03516, 12.266 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Zone4/StaticBody"]
+mesh = SubResource( 13 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 14 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Zone4/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="GroundPhysics" type="Node" parent="Zone4/StaticBody"]
+script = ExtResource( 10 )
+physics = ExtResource( 11 )
 
 [node name="GameOver" type="Area" parent="."]
 script = ExtResource( 7 )

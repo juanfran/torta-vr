@@ -21,13 +21,13 @@ export (Resource) var physics
 
 # This method verifies the MovementProvider has a valid configuration.
 func _get_configuration_warning():
-	# Verify physics specified
-	if !physics:
-		return "Physics must be specified"
+    # Verify physics specified
+    if !physics:
+        return "Physics must be specified"
 
-	# Verify physics is of the correct type
-	if !physics is GroundPhysicsSettings:
-		return "Physics must be a GroundPhysicsSettings"
+    # Verify physics is of the correct type
+    if !physics is GroundPhysicsSettings:
+        return "Physics must be a GroundPhysicsSettings"
 
-	# Report valid
-	return ""
+    # Report valid
+    return ""
