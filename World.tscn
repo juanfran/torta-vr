@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://map-items/Building.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/wahooney.itch.io/white_grid.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://map-items/Doors.tscn" type="PackedScene" id=12]
 [ext_resource path="res://map-items/Sticks.tscn" type="PackedScene" id=13]
 [ext_resource path="res://map-items/Floor.tscn" type="PackedScene" id=14]
+[ext_resource path="res://map-items/Windmill.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ProceduralSky" id=5]
 sky_top_color = Color( 0.211765, 0.313726, 0.552941, 1 )
@@ -259,15 +260,34 @@ transform = Transform( 2.10569, 0, 0, 0, 1, 0, 0, 0, 3.2311, -102.932, -6.481, 1
 
 [node name="Sticks" parent="Zone5" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.067, -7.35351, 10.1679 )
+speed = 1.2
 
 [node name="Sticks3" parent="Zone5" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -133.869, -7.35351, 10.1679 )
+speed = 1.6
 
 [node name="Sticks2" parent="Zone5" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -123.829, -7.35351, 15.0869 )
+speed = 0.6
 
 [node name="Floor" parent="Zone5" instance=ExtResource( 14 )]
-transform = Transform( 20, 0, 0, 0, 0.2, 0, 0, 0, 0.4, -124.944, -7.6991, 12.5097 )
+transform = Transform( 25, 0, 0, 0, 0.2, 0, 0, 0, 1, -129.935, -7.6991, 12.5097 )
+
+[node name="Windmill" parent="Zone5" instance=ExtResource( 15 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -142.782, -3.09775, 12.5083 )
+speed = 1.0
+
+[node name="Windmill2" parent="Zone5" instance=ExtResource( 15 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -149.013, -3.09775, 12.5083 )
+speed = 2.0
+
+[node name="Zone6" type="Spatial" parent="."]
+
+[node name="Floor" parent="Zone6" instance=ExtResource( 14 )]
+transform = Transform( 2.06999, 0, 0, 0, 0.2, 0, 0, 0, 2.7462, -156.987, -7.45095, 12.362 )
+
+[node name="Checkpoint" parent="Zone6" instance=ExtResource( 6 )]
+transform = Transform( 1.499, 0, 0, 0, 1, 0, 0, 0, 2.71736, -156.422, -6.48606, 12.4297 )
 
 [node name="GameOver" type="Area" parent="."]
 script = ExtResource( 7 )

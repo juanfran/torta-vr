@@ -43,7 +43,7 @@ jump_button_id = 7
 [node name="Function_Pickup" parent="Player/FPController/RightHandController" index="3" instance=ExtResource( 9 )]
 
 [node name="PlayerBody" parent="Player/FPController" instance=ExtResource( 4 )]
-gravity = -8.8
+gravity = -10.0
 
 [node name="Function_Climb_movement" parent="Player/FPController" instance=ExtResource( 8 )]
 left_pickup = NodePath("../LeftHandController/Function_Pickup")
