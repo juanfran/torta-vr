@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://map-items/WindmillPlatform.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.262745, 0.819608, 0.129412, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.192157, 0.717647, 0.878431, 1 )
+
+[sub_resource type="CylinderShape" id=4]
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.192157, 0.717647, 0.878431, 1 )
+
+[node name="WindmillPlatform" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Windmill" type="Spatial" parent="."]
+
+[node name="Inner" type="Spatial" parent="Windmill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Windmill/Inner"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -0.3, 0, 1, -1.31134e-08, 0, 0, 0 )
+use_collision = true
+polygon = PoolVector2Array( 0, 0, -0.663984, 2.24051, 1.677, 2.24838, 1, 0 )
+material = SubResource( 1 )
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="Windmill/Inner"]
+transform = Transform( -4.37114e-08, 1, -1.31134e-08, 0, -4.37114e-08, -0.3, -1, -4.37114e-08, 5.73206e-16, 1.00103, 0, 0 )
+use_collision = true
+polygon = PoolVector2Array( 0, 0, -0.663984, 2.24051, 1.677, 2.24838, 1, 0 )
+material = SubResource( 1 )
+
+[node name="CSGPolygon3" type="CSGPolygon" parent="Windmill/Inner"]
+transform = Transform( -1, -8.74228e-08, 1.14641e-15, 0, -4.37114e-08, -0.3, 8.74228e-08, -1, 1.31134e-08, 1.00103, 0, -0.995318 )
+use_collision = true
+polygon = PoolVector2Array( 0, 0, -0.663984, 2.24051, 1.677, 2.24838, 1, 0 )
+material = SubResource( 1 )
+
+[node name="CSGPolygon4" type="CSGPolygon" parent="Windmill/Inner"]
+transform = Transform( -4.37114e-08, -1, 1.31134e-08, 0, -4.37114e-08, -0.3, 1, -4.37114e-08, 5.73206e-16, 0.00728714, 0, -0.995318 )
+use_collision = true
+polygon = PoolVector2Array( 0, 0, -0.663984, 2.24051, 1.677, 2.24838, 1, 0 )
+material = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Windmill/Inner"]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 0.518729, 0, -0.508022 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Windmill/Inner/StaticBody"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Windmill/Inner/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Bar" type="MeshInstance" parent="Windmill/Inner/StaticBody"]
+transform = Transform( 0.2, 0, 0, 0, -8.74228e-08, -0.2, 0, 2, -8.74228e-09, 0, 0.577189, -0.0271729 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Bar2" type="MeshInstance" parent="Windmill/Inner/StaticBody"]
+transform = Transform( -8.74228e-09, 2, -8.74228e-09, 0, -8.74228e-08, -0.2, -0.2, -8.74228e-08, 3.82137e-16, 0, 0.577189, -0.0271729 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )

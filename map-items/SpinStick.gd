@@ -9,5 +9,4 @@ func _physics_process(delta):
     if flip:
         change = -change
         
-    $StaticBody.rotate_y(change)
-    $StaticBody2.rotate_y(change)
+    rotate_y(change)

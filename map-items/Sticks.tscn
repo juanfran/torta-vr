@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://map-items/Sticks.gd" type="Script" id=1]
 
 [sub_resource type="CylinderMesh" id=1]
 
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.627451, 0.239216, 0.843137, 1 )
+
 [sub_resource type="CylinderShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.627451, 0.239216, 0.843137, 1 )
 
 [node name="Sticks" type="Spatial"]
 script = ExtResource( 1 )
@@ -13,8 +19,9 @@ script = ExtResource( 1 )
 transform = Transform( 0.1, 0, 0, 0, -2.18557e-07, -0.1, 0, 5, -4.37114e-09, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, -5.55112e-17, 0, -2.27374e-13, 1, 0, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 2 )
@@ -23,8 +30,9 @@ shape = SubResource( 2 )
 transform = Transform( -4.37114e-09, -5, 4.37114e-09, 0, -2.18557e-07, -0.1, 0.1, -2.18557e-07, 1.91069e-16, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody2"]
+transform = Transform( 1, 4.54747e-13, 0, 0, 1, -1.67037e-24, 0, -4.54747e-13, 1, 0, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
 shape = SubResource( 2 )
