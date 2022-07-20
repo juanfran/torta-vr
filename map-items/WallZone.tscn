@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://map-items/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://map-items/MovindWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://map-items/WallZone.gd" type="Script" id=3]
+
+[node name="WallZone" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="wall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 1.03836 )
+
+[node name="floor" parent="." instance=ExtResource( 1 )]
+transform = Transform( 10, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, -1.94731 )
+
+[node name="MovindWall" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.033, 1.15, 1 )
+speed = 2.0
+
+[node name="MovindWall2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81408, 1.15, 1 )
+speed = 2.7
+
+[node name="MovindWall3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103359, 1.15, 1 )
+speed = 1.2
+
+[node name="MovindWall4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93587, 1.15, 1 )
+speed = 2.9

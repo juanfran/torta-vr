@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://map-items/Building.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/wahooney.itch.io/white_grid.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://map-items/Sticks.tscn" type="PackedScene" id=13]
 [ext_resource path="res://map-items/Floor.tscn" type="PackedScene" id=14]
 [ext_resource path="res://map-items/Windmill.tscn" type="PackedScene" id=15]
+[ext_resource path="res://map-items/WallZone.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ProceduralSky" id=5]
 sky_top_color = Color( 0.211765, 0.313726, 0.552941, 1 )
@@ -288,6 +289,9 @@ transform = Transform( 2.06999, 0, 0, 0, 0.2, 0, 0, 0, 2.7462, -156.987, -7.4509
 
 [node name="Checkpoint" parent="Zone6" instance=ExtResource( 6 )]
 transform = Transform( 1.499, 0, 0, 0, 1, 0, 0, 0, 2.71736, -156.422, -6.48606, 12.4297 )
+
+[node name="WallZone" parent="Zone6" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -169.039, -7.45416, 14.348 )
 
 [node name="GameOver" type="Area" parent="."]
 script = ExtResource( 7 )
