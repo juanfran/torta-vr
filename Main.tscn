@@ -14,7 +14,7 @@
 [node name="Main" type="Spatial"]
 
 [node name="Player" type="Spatial" parent="."]
-transform = Transform( 0.0292824, 0, 0.999571, 0, 1, 0, -0.999571, 0, 0.0292824, -50.7611, 21.0033, 12.3966 )
+transform = Transform( 0.0292824, 0, 0.999571, 0, 1, 0, -0.999571, 0, 0.0292824, -103.289, -7.00799, 11.7923 )
 
 [node name="FPController" parent="Player" instance=ExtResource( 1 )]
 
@@ -43,6 +43,7 @@ jump_button_id = 7
 [node name="Function_Pickup" parent="Player/FPController/RightHandController" index="3" instance=ExtResource( 9 )]
 
 [node name="PlayerBody" parent="Player/FPController" instance=ExtResource( 4 )]
+gravity = -8.8
 
 [node name="Function_Climb_movement" parent="Player/FPController" instance=ExtResource( 8 )]
 left_pickup = NodePath("../LeftHandController/Function_Pickup")
