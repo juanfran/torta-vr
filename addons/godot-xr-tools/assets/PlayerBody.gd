@@ -274,6 +274,8 @@ func request_jump(var skip_jump_velocity := false):
 
 # Perform a move_and_slide on the kinematic node
 func move_and_slide(var velocity: Vector3) -> Vector3:
+    # hack
+    push_rigid_bodies = false
     return kinematic_node.move_and_slide(velocity, Vector3.UP, false, 4, 0.785398, push_rigid_bodies)
 
 # Set or clear a named height override

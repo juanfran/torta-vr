@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://map-items/CannonBall.gd" type="Script" id=1]
 
 [sub_resource type="SphereShape" id=1]
 
 [sub_resource type="SphereMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
 albedo_color = Color( 0.980392, 0.901961, 0.0627451, 1 )
 
 [node name="CannonBall" type="RigidBody"]
+mass = 6.31224
+script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
@@ -16,3 +21,5 @@ shape = SubResource( 1 )
 mesh = SubResource( 2 )
 skeleton = NodePath("")
 material/0 = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_CannonBall_body_entered"]

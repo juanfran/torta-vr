@@ -26,10 +26,20 @@ func wait_throw():
     
 func throw_ball():
     stop = true
-
+    
     var ball_node = ball_scene.instance()
     ball_node.set_global_transform($Inner/Ballspawn.get_global_transform())
-
+    
+    var random_color = randi() % 4
+    var material = ball_node.get_node('MeshInstance').get_active_material(0)
+    
+    if random_color == 0:
+        material.albedo_color = Color(1, 1, 1, 1)
+    elif random_color == 1:
+        material.albedo_color = Color(0.84, 0.34, 0.95, 1)
+    elif random_color == 2:    
+        material.albedo_color = Color(0.24, 0.76, 0.09, 1)
+    
     get_node('/root').add_child(ball_node)
     
     var angle = rotation
