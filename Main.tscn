@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Jump_movement.tscn" type="PackedScene" id=2]
@@ -10,13 +10,11 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Climb_movement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Pickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World.tscn" type="PackedScene" id=10]
-[ext_resource path="res://map-items/cylinder.tscn" type="PackedScene" id=11]
-[ext_resource path="res://map-items/Floor.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Spatial"]
 
 [node name="Player" type="Spatial" parent="."]
-transform = Transform( 0.998901, 0, 0.0468623, 0, 1, 0, -0.0468623, 0, 0.998901, 2.94369, 0.182496, -13.6726 )
+transform = Transform( 0.00179777, 0, 0.999998, 0, 1, 0, -0.999998, 0, 0.00179777, -199.518, -7.51416, 13.3393 )
 
 [node name="FPController" parent="Player" instance=ExtResource( 1 )]
 
@@ -52,11 +50,5 @@ left_pickup = NodePath("../LeftHandController/Function_Pickup")
 right_pickup = NodePath("../RightHandController/Function_Pickup")
 
 [node name="World" parent="." instance=ExtResource( 10 )]
-
-[node name="Floor" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1, -10.7109, 8.67644, -43.4653 )
-
-[node name="Cylinder" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.0879381, 0.996126, -4.3542e-08, 0, -4.37114e-08, -1, -0.996126, 0.0879381, -3.8439e-09, -10.7109, -14.5458, -43.4653 )
 
 [editable path="Player/FPController"]
