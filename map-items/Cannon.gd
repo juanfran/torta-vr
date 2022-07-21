@@ -5,20 +5,20 @@ export (int) var throw_time = 2
 export (int) var init_delay = 0
 export (int) var rotation_speed = 1
 
-var stop = false
+var stop = true
 
 var ball_scene = load("res://map-items/CannonBall.tscn")
 
 func _ready():
     yield(get_tree().create_timer(init_delay), "timeout")
-    
+    stop = false
     wait_throw()
     
 func _physics_process(delta):
     if !stop:
         var change = rotation_speed * delta
 
-        $Inner.rotate_x(change)
+        $Inner.rotate_z(change)
 
 func wait_throw(): 
     yield(get_tree().create_timer(throw_time), "timeout")
@@ -38,4 +38,6 @@ func throw_ball():
     ball_node.apply_central_impulse(dest_vector * speed)
     yield(get_tree().create_timer(0.5), "timeout")
     stop = false
+    rotation_speed = -rotation_speed
     wait_throw()
+    

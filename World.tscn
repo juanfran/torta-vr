@@ -352,22 +352,30 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -276.77, -9.70737, 14.1281 )
 transform = Transform( 40, 0, 0, 0, 0.2, 0, 0, 0, 1, -33.0136, 0, 0 )
 
 [node name="Cannon" parent="Zone9" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 0.0356843, -0.999363, 0, 0.999363, 0.0356843, -9.90073, 2.94378, -12.5497 )
+transform = Transform( 0.827073, 0.561904, 0.0146179, 0.0723567, -0.0806409, -0.994113, -0.557417, 0.823262, -0.107354, -9.90073, 2.94378, -12.5497 )
+throw_time = 1
+
+[node name="Cannon5" parent="Zone9" instance=ExtResource( 21 )]
+transform = Transform( 0.827073, 0.561904, 0.0146179, 0.0423607, -0.0363769, -0.99844, -0.560495, 0.826402, -0.053889, -43.5308, 2.94378, -12.5497 )
+throw_time = 1
+init_delay = 1
 
 [node name="Cannon2" parent="Zone9" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 0.466757, 0.884386, 0, -0.884386, 0.466757, -4.65073, 0, 36.9428 )
-speed = 6.0
+speed = 7.5
 throw_time = 1
 
 [node name="Cannon3" parent="Zone9" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 0.466757, 0.884386, 0, -0.884386, 0.466757, -28.5383, 0, 36.9428 )
-speed = 6.0
+transform = Transform( 0.806259, 0.52317, -0.276116, 0, 0.466757, 0.884386, 0.591563, -0.713044, 0.376327, -28.5383, 0, 36.9428 )
+speed = 7.5
 throw_time = 1
+init_delay = 1
 
 [node name="Cannon4" parent="Zone9" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 0.466757, 0.884386, 0, -0.884386, 0.466757, -49.5723, 0, 36.9428 )
-speed = 6.0
+transform = Transform( 0.587997, 0.715347, -0.377543, 0, 0.466757, 0.884386, 0.808863, -0.520016, 0.274452, -49.5723, 0, 36.9428 )
+speed = 7.5
 throw_time = 1
+init_delay = 2
 
 [node name="Final" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -378.172, -11.1454, 0 )
