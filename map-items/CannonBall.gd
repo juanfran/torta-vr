@@ -1,5 +1,9 @@
 extends RigidBody
 
+func _ready():
+    yield(get_tree().create_timer(10.0), "timeout")
+    queue_free()
+
 func _on_CannonBall_body_entered(body):
     if body.name == 'KinematicBody':
         pass
