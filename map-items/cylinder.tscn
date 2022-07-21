@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://map-items/cylinder.gd" type="Script" id=1]
+[ext_resource path="res://map-items/Hammer.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.972549, 0.870588, 0.0470588, 1 )
@@ -104,3 +105,17 @@ material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Wall4"]
 shape = SubResource( 5 )
+
+[node name="Hammer" parent="CSGCombiner" instance=ExtResource( 2 )]
+transform = Transform( 2.72034, -1.26482, -5.88592e-08, 3.21873e-09, -1.32684e-07, 3, -1.26482, -2.72034, -1.18958e-07, -8.38804, -8.36156e-07, -19.129 )
+
+[node name="Hammer3" parent="CSGCombiner" instance=ExtResource( 2 )]
+transform = Transform( -2.71611, 1.27388, 5.88182e-08, 1.14189e-07, 1.0495e-07, 3, 1.27388, 2.71611, -1.43506e-07, 8.67284, 8.30328e-07, 18.9957 )
+
+[node name="Hammer2" parent="CSGCombiner" instance=ExtResource( 2 )]
+transform = Transform( 1.2561, 2.72435, -0.0112372, -0.00422935, 0.014324, 2.99996, 2.72437, -1.25607, 0.00983816, 19.1725, -0.00426424, -8.31224 )
+flip = true
+
+[node name="Hammer4" parent="CSGCombiner" instance=ExtResource( 2 )]
+transform = Transform( -1.41689, -2.6443, 0.0106283, -0.00422958, 0.0143241, 2.99996, -2.64432, 1.41686, -0.0104933, -18.2277, 4.48101e-07, 10.2514 )
+flip = true
