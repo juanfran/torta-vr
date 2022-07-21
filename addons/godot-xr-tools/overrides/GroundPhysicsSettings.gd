@@ -30,7 +30,7 @@ export (float, 0.0, 85.0) var move_max_slope := 45.0
 export (float, 0.0, 85.0) var jump_max_slope := 45.0
 
 ## Jump velocity
-export var jump_velocity := 3.0
+export var jump_velocity := 5.0
 
 # Handle class initialization with default parameters
 func _init(

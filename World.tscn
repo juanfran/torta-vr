@@ -91,6 +91,9 @@ shape = SubResource( 2 )
 [node name="PlayerPosition" type="Spatial" parent="Zone1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89346, 0.0956755, 13.0139 )
 
+[node name="Checkpoint" parent="Zone1" instance=ExtResource( 6 )]
+transform = Transform( 3.3886, 0, 0, 0, 1, 0, 0, 0, 3.26164, -6.45455, 9.09389, 15.2227 )
+
 [node name="Zone2" type="Spatial" parent="."]
 
 [node name="Platforms" parent="Zone2" instance=ExtResource( 4 )]
