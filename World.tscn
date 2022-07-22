@@ -218,10 +218,10 @@ transform = Transform( 1, -9.31323e-10, -1.11022e-16, 0, -4.37114e-08, 1, 0, -1,
 [node name="Zone3" type="Spatial" parent="."]
 
 [node name="JumpPad" parent="Zone3" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4791, 8.24643, 11.5897 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4351, 8.24643, 11.5897 )
 
 [node name="Floor" type="StaticBody" parent="Zone3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4995, 7.98804, 12.2286 )
+transform = Transform( 1.26929, 0, 0, 0, 1, 0, 0, 0, 1, -37.2142, 7.81549, 12.2286 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Zone3/Floor"]
 mesh = SubResource( 11 )
@@ -245,7 +245,6 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 10, -47.2163, 22.3584, 12.4211 )
 transform = Transform( 2.81677, 20.6554, 0, -4.13108, 14.0838, 0, 0, 0, 10, -71.4846, 3.03516, 12.266 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Zone4/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 13 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 14 )
